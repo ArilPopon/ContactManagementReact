@@ -16,7 +16,7 @@ export const contactCreate = async (token, { first_name, last_name, email, phone
 }
 
 export const contactList = async (token, { name, phone, email, page }) => {
-    const url = new URL(`${import.meta.env.VITE_API_PATH}/contacts`);
+    const url = new URL(`${import.meta.env.VITE_API_PATH}/contacts`, window.location.origin);
 
     if (name) url.searchParams.append('name', name);
     if (phone) url.searchParams.append('phone', phone);
